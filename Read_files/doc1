@@ -1,0 +1,172 @@
+2024-03-2118: 31: 58,
+945,
+945DEBUG[
+  main.py: 711
+]{
+  'data': {
+    'detections': [
+      {
+        'object_id': 1138,
+        'confidence': 0.54,
+        'name': 'person',
+        'x1': 338,
+        'y1': 137,
+        'x2': 461,
+        'y2': 137,
+        'x3': 461,
+        'y3': 285,
+        'x4': 338,
+        'y4': 285
+      },
+      {
+        'object_id': 924,
+        'confidence': 0.79,
+        'name': 'person',
+        'x1': 825,
+        'y1': 271,
+        'x2': 991,
+        'y2': 271,
+        'x3': 991,
+        'y3': 468,
+        'x4': 825,
+        'y4': 468
+      },
+      {
+        'object_id': 944,
+        'confidence': 0.88,
+        'name': 'person',
+        'x1': 757,
+        'y1': 449,
+        'x2': 948,
+        'y2': 449,
+        'x3': 948,
+        'y3': 654,
+        'x4': 757,
+        'y4': 654
+      },
+      {
+        'object_id': 1139,
+        'confidence': 0.86,
+        'name': 'person',
+        'x1': 437,
+        'y1': 353,
+        'x2': 642,
+        'y2': 353,
+        'x3': 642,
+        'y3': 587,
+        'x4': 437,
+        'y4': 587
+      },
+      {
+        'object_id': 1145,
+        'confidence': 0.77,
+        'name': 'person',
+        'x1': 670,
+        'y1': 132,
+        'x2': 775,
+        'y2': 132,
+        'x3': 775,
+        'y3': 288,
+        'x4': 670,
+        'y4': 288
+      },
+      {
+        'object_id': 1173,
+        'confidence': 0.74,
+        'name': 'person',
+        'x1': 852,
+        'y1': 170,
+        'x2': 963,
+        'y2': 170,
+        'x3': 963,
+        'y3': 318,
+        'x4': 852,
+        'y4': 318
+      },
+      {
+        'object_id': 1166,
+        'confidence': 0.61,
+        'name': 'person',
+        'x1': 0,
+        'y1': 156,
+        'x2': 17,
+        'y2': 156,
+        'x3': 17,
+        'y3': 196,
+        'x4': 0,
+        'y4': 196
+      },
+      {
+        'object_id': 1171,
+        'confidence': 0.85,
+        'name': 'person',
+        'x1': 603,
+        'y1': 287,
+        'x2': 790,
+        'y2': 287,
+        'x3': 790,
+        'y3': 414,
+        'x4': 603,
+        'y4': 414
+      }
+    ],
+    'Tracker-person_detection1-rtsp-sir_cabin_door_out_buffer_id': 'gAAAAABl_C_GM7R9c0mgY6hGkvnQ_J6SE57zXGxKkjhfGA_sjcY57k92NHVJToj2m_5SM00idO6C1u3QtWqwsUGFITWQx_3hFdyG_UgMyvGnYLkKqLkb4RC_SeQzr9TfCYJDxFmbpLYG02axXqAp1sKCKPWOYmkAaz49OvLQiRMA04uHoUe0tzF1Qnw44fHxdpxz_gnwZn4mIqQcFJsjPAJ3nLdh85tUTqyTPmTlGPfL6Idb8YEObPs='
+  },
+  'key': 'sir_cabin_door_out',
+  'headers': {
+    'dp_world_pedestrian_violation_consume_time': '21-03-2024 18:31:58.945690',
+    'source_frame_width': '1280',
+    'link': 'rtsp://192.168.1.213:554/1/1',
+    'fps': '1/1',
+    'source_id': '65fbd012be8344d991ba0138',
+    'consent': 'False',
+    'source_name': 'sir_cabin_door_out',
+    'source_frame_height': '720',
+    'codec_name': 'h264',
+    'source': 'rtsp-sir_cabin_door_out',
+    'location': '',
+    'rtsp-sir_cabin_door_out_produce_time': '21-03-2024 18:31:58.902309',
+    'person_detection_consume_time': '21-03-2024 18:31:58.920929',
+    'offset': '9551',
+    'topic': 'media_server',
+    'partition': '0',
+    'person_detection_produce_time': '21-03-2024 18:31:58.936950'
+  },
+  'transaction_id': 'gAAAAABl_C_GEH1oVppgRKRV7pbochRd-fZATU9e2FBlpqaKhTuJV5LfI0xItXXYi7VRcatkL8Z4mnUgw2tpODoUZlqnZGz9vO-JhrqNHNQtubhWaPJwsW4pFTQ6XK6Zput3pHTlhU4MF0-JWYbwOMvxHi-9vq7Bu_t9OyvNOlzKIQ1gypIhyPtt0SxqPOrMcSaxqWGcHEu58MrHSyiIW41CV2xSSqZw1jLsrjk8rFbY-pWJAYiJ7u1vK0b24q4KpHqkf3f1XXUgv4aHaon3H5fTKK9XiR2tEqqe7BH-hKi4xtE1IDcoh8NYqPwCNToVoOkrAvrGUUU6qzYapGOQtbvCSgtXSHDO8giu7pE-fBS6mnebdcltwRA='
+}
+
+2024-03-2118: 31: 58,
+946,
+946DEBUG[
+  main.py: 612
+]gAAAAABl_C_GEH1oVppgRKRV7pbochRd-fZATU9e2FBlpqaKhTuJV5LfI0xItXXYi7VRcatkL8Z4mnUgw2tpODoUZlqnZGz9vO-JhrqNHNQtubhWaPJwsW4pFTQ6XK6Zput3pHTlhU4MF0-JWYbwOMvxHi-9vq7Bu_t9OyvNOlzKIQ1gypIhyPtt0SxqPOrMcSaxqWGcHEu58MrHSyiIW41CV2xSSqZw1jLsrjk8rFbY-pWJAYiJ7u1vK0b24q4KpHqkf3f1XXUgv4aHaon3H5fTKK9XiR2tEqqe7BH-hKi4xtE1IDcoh8NYqPwCNToVoOkrAvrGUUU6qzYapGOQtbvCSgtXSHDO8giu7pE-fBS6mnebdcltwRA=
+
+2024-03-2118: 31: 58,
+946,
+946DEBUG[
+  main.py: 613
+]sir_cabin_door_out
+
+2024-03-2118: 31: 58,
+946,
+946DEBUG[
+  main.py: 614
+]{
+  'dp_world_pedestrian_violation_consume_time': '21-03-2024 18:31:58.945690',
+  'source_frame_width': '1280',
+  'link': 'rtsp://192.168.1.213:554/1/1',
+  'fps': '1/1',
+  'source_id': '65fbd012be8344d991ba0138',
+  'consent': 'False',
+  'source_name': 'sir_cabin_door_out',
+  'source_frame_height': '720',
+  'codec_name': 'h264',
+  'source': 'rtsp-sir_cabin_door_out',
+  'location': '',
+  'rtsp-sir_cabin_door_out_produce_time': '21-03-2024 18:31:58.902309',
+  'person_detection_consume_time': '21-03-2024 18:31:58.920929',
+  'offset': '9551',
+  'topic': 'media_server',
+  'partition': '0',
+  'person_detection_produce_time': '21-03-2024 18:31:58.936950'
+}
