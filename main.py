@@ -130,7 +130,8 @@ def load_configuration_settings(source_id, source_name, **kwargs):
                 report_time_threshold = int(roi.get("report_time_threshold", 1))
                 max_time_threshold_detection = int(roi.get("max_time_threshold_detection", 1))
                 loaded_camera_ids[source_id]["indexes"].append(start_index)
-                loaded_camera_ids[source_id]["extra"] = {
+
+                loaded_camera_ids[source_id]["extra"][start_index] = {
                     "report_time_threshold": int(roi.get("report_time_threshold", 1)),
                     "max_time_threshold_detection": int(roi.get("max_time_threshold_detection", 1)),
                     "source": settings.source_details,
@@ -243,9 +244,9 @@ def post_process(
     alert_schema["output_data"].append(
         {
             "transaction_id": transaction_id,
-            "output": "person tresspassing detected",
+            "output": "pedestrian violation",
             "priority": "medium",
-            "alert_text": "person tresspassing detected in region {}".format(
+            "alert_text": "pedestrian violation in region {}".format(
                 sources_list[index]["roi"]["roi_name"]
             ),
             "metadata": medias,
@@ -644,20 +645,16 @@ class DataProcessor:
 
             loaded_camera = loaded_camera_ids[source_details["source_id"]]["indexes"]
 
-            # logger.debug(loaded_camera_ids)
-            # logger.debug(loaded_camera_ids[source_details["source_id"]])
-            # logger.debug(loaded_camera_ids[source_details["source_id"]]["indexes"])
             for detected_object in copy.deepcopy(data["detections"]):
-                if detected_object["name"] == object_class_name and detected_object["confidence"] >= 0.5:
+                if detected_object["name"] == object_class_name and detected_object["confidence"] >= 0.8:
                     x1, x2 = detected_object["x1"], detected_object["x2"]
                     y1, y4 = detected_object["y1"], detected_object["y4"]
                     x_coordinate = (x1 + x2) // 2
                     y_coordinate = (y1 + y4) // 2
 
- 
                     for _id in loaded_camera_ids[source_details["source_id"]]["indexes"]:
-                        report_time_threshold = loaded_camera_ids[source_details["source_id"]]["extra"]["report_time_threshold"]
-                        max_time_threshold_detection = loaded_camera_ids[source_details["source_id"]]["extra"]["max_time_threshold_detection"]
+                        report_time_threshold = loaded_camera_ids[source_details["source_id"]]["extra"][_id]["report_time_threshold"]
+                        max_time_threshold_detection = loaded_camera_ids[source_details["source_id"]]["extra"][_id]["max_time_threshold_detection"]
 
                         if Point(x_coordinate, y_coordinate).within(polygons[_id]):
 
@@ -680,12 +677,12 @@ class DataProcessor:
                                 # if self.object_tracker[object_id]['last_detected'] and utc_now - self.object_tracker[object_id]["last_detected"]:
                                 # logger.debug(utc_now - self.object_tracker[object_id]["last_detected"])
                                 if self.object_tracker[object_id]['last_detected'] and (utc_now - self.object_tracker[object_id]["last_detected"]) >= datetime.timedelta(seconds=report_time_threshold):
+                                    logger.debug(utc_now)
                                     logger.debug(report_time_threshold)
-                                    logger.debug(max_time_threshold_detection)
+                                    logger.debug(sample_generator)
                                     # sample_generator.append(self.object_tracker[object_id])
                                     sample_generator[object_id] = self.object_tracker[object_id]
                                     self.object_tracker[object_id]["last_detected"] = utc_now
-                                    # logger.debug(sample_generator)
                                 # logger.debug(data["detections"])
                                 # logger.debug(detected_object)
                                 # logger.debug(self.object_tracker[object_id])
@@ -711,7 +708,6 @@ class DataProcessor:
                                         transaction_id=transaction_id,
                                         **data,
                                     )
-            # self.checkers_id = [obj_id for obj_id in self.checkers_id if obj_id in [det_obj['object_id'] for det_obj in data["detections"]]]
         except Exception as e:
             logger.error(
             "Error on line {}  EXCEPTION: {}".format(sys.exc_info()[-1].tb_lineno, e)
